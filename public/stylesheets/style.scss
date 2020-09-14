@@ -8,6 +8,14 @@ a {
 }
 
 nav ul {
-  flex: display;
+  display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: baseline;
+  list-style-type: none;
+}
+
+nav li {
+  margin: 20px;
 }
