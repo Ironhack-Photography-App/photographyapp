@@ -11,8 +11,14 @@
 </h1>
 
 {{#unless user}}
-<a href="/login">Log in</a>
-<a href="/signup">Sign up</a>
+<header>
+  <nav>
+    <ul>
+      <li><a href="/login">Log in</a></li>
+      <li><a href="/signup">Sign up</a></li>
+    </ul>
+  </nav>
+</header>
 {{else}}
 <a href="/logout">Log out</a>
 {{/unless}}
