@@ -1,0 +1,18 @@
+<h1>Photo</h1>
+<div class="photo-wrapper">
+  {{#if photos}}
+  {{#each photos}}
+  <div class="photo-item">
+    <h4>{{this.owner}}</h4>
+    <p>{{this.description}}</p>
+    <p>{{this.comment}}</p>
+    <img src="{{this.imgPath}}" alt="photo-url">
+    <a href="/photo/delete/{{this._id}}">❌</a>
+  </div>
+  {{/each}}
+  {{else}}
+  <h3>No photos yet 🤷‍♀️🤷‍ ️</h3>
+  {{/if}}
+</div>
+
+<a href="/photo/add">Add a photo</a>
