@@ -158,4 +158,7 @@ app.use("/", index);
 const auth = require("./routes/auth");
 app.use("/", auth);
 
+const photo = require("./routes/photo");
+app.use("/", photo);
+
 module.exports = app;
