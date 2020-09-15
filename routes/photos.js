@@ -66,6 +66,24 @@ router.post(
   }
 );
 
+router.post("/photo/:id/comments", (req, res, next) => {
+  const { user, comments } = req.body.photo;
+  Book.findByIdAndUpdate(req.params.photoId, {
+    $push: {
+      photos: {
+        user: user,
+        comments: comments,
+      },
+    },
+  })
+    .then((photo) => {
+      res.redirect(`/photo/${photo._id}`);
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
 router.get("/photo/delete/:id", (req, res, next) => {
   Photo.findByIdAndDelete(req.params.id)
     .then((photo) => {
