@@ -8,6 +8,7 @@ const User = require("../models/User");
 router.get("/dashboard", (req, res, next) => {
   // console.log("is this the user?>>", req.user);
   User.find()
+    .populate('gallery')
     .then((photographers) => {
       // let user = req.user.username;
       res.render("dashboard", {
@@ -20,10 +21,15 @@ router.get("/dashboard", (req, res, next) => {
 });
 
 router.get("/user-profile", (req, res, next) => {
-  Photo.find({ owner: req.user._id })
+  Photo.find({
+      owner: req.user._id
+    })
     .then((userPhotos) => {
       console.log(userPhotos);
-      res.render("user/user-profile", { userPhotos: userPhotos });
+      res.render("user/user-profile", {
+        user: req.user,
+        userPhotos: userPhotos
+      });
     })
     .catch((err) => next(err));
 });
