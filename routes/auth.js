@@ -37,8 +37,16 @@ router.get(
 // }
 
 router.post("/signup", (req, res, next) => {
-  const { username, password } = req.body;
-
+  const {
+    username,
+    password,
+    category,
+    location,
+    gallery,
+    favorites,
+    role,
+  } = req.body;
+  console.log("this is reqbody", req.body);
   if (password.length < 8) {
     res.render("auth/signup", {
       message: "Your password needs to be 8 chars min",
@@ -60,7 +68,13 @@ router.post("/signup", (req, res, next) => {
       User.create({
         username: username,
         password: hash,
+        category: category,
+        location: location,
+        gallery: gallery,
+        role: role,
+        favorites: favorites,
       }).then((dbUser) => {
+        console.log("this is dbUser", dbUser);
         // log the user in
         // res.render('dashboard', { user: dbUser });
         // login with passport:
