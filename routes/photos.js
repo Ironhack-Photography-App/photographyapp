@@ -35,7 +35,7 @@ router.post(
     Photo.create({
       owner: req.user._id,
       description,
-      comment,
+      // comment,
       imgName,
       imgPath,
       imgPublicId,
