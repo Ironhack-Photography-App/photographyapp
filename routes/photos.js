@@ -24,7 +24,7 @@ router.post(
   uploader.single("photo"),
   loginCheck(),
   (req, res, next) => {
-    const { description, comment } = req.body;
+    const { description } = req.body;
     // cloudinary information
     const imgName = req.file.originalname;
     const imgPath = req.file.url;
@@ -41,7 +41,7 @@ router.post(
       imgPublicId,
     })
       .then((photo) => {
-        res.redirect("/photo");
+        res.redirect("/user-profile");
       })
       .catch((err) => {
         next(err);
