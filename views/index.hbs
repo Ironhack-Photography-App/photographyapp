@@ -22,9 +22,13 @@
   </div>
 </header>
 
-<body class='body'>
+<body class='landing-page-body'>
 
 </body>
 {{else}}
 <a href="/logout">Log out</a>
 {{/unless}}
+
+{{#each photographers}}
+<p>{{username}}</p>
+{{/each}}
