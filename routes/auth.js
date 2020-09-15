@@ -22,6 +22,20 @@ router.get(
   })
 );
 
+// function checkboxFunction() {
+//   // Get the checkbox
+//   var checkBox = document.getElementById("myCheck");
+//   // Get the output text
+//   var text = document.getElementById("text");
+
+//   // If the checkbox is checked, display the output text
+//   if (checkBox.checked == true) {
+//     text.style.display = "block";
+//   } else {
+//     text.style.display = "none";
+//   }
+// }
+
 router.post("/signup", (req, res, next) => {
   const { username, password } = req.body;
 
@@ -43,7 +57,6 @@ router.post("/signup", (req, res, next) => {
       // hash the password, create the user and redirect to profile page
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(password, salt);
-
       User.create({
         username: username,
         password: hash,

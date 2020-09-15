@@ -23,9 +23,9 @@ router.get("/user-profile", (req, res, next) => {
   Photo.find({ owner: req.user._id })
     .then((userPhotos) => {
       console.log(userPhotos);
-      res.render("user-profile", { userPhotos });
+      res.render("user/user-profile", { userPhotos: userPhotos });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => next(err));
 });
 
 module.exports = router;

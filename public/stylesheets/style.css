@@ -21,7 +21,7 @@ nav li {
   display: inline;
   margin: 20px; }
 
-.body {
+.landing-page-body {
   background-image: url("../images/landingpage.jpeg");
   background-size: cover; }
 

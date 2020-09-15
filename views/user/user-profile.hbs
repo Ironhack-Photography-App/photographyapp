@@ -1,0 +1,12 @@
+<h1>Hi {{user.username}}, welcome to your profile </h1>
+<h2>Your photos</h2>
+{{#each userPhotos}}
+<img src={{imgPath}} alt="">
+{{/each}}
+
+<a href="/photo/add">add a photo</a>
+
+
+
+
+<h2>Your favorites</h2>
