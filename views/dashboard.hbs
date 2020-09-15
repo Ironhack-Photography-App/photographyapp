@@ -1,4 +1,8 @@
-<h1>WELCOME to dashboard {{user}} </h1>
+<h1>WELCOME to dashboard {{user.username}} </h1>
 
 <a href="/user-profile">Your Profile</a>
 <a href="/logout">Logout</a>
+
+{{#each photographers}}
+<p>{{username}}</p>
+{{/each}}

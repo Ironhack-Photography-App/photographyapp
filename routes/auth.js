@@ -11,16 +11,6 @@ router.get("/signup", (req, res, next) => {
 router.get("/login", (req, res, next) => {
   res.render("auth/login");
 });
-router.get("/dashboard", (req, res, next) => {
-  console.log("is this the user?>>", req.user);
-  let user = req.user.username;
-
-  res.render("dashboard", { user });
-});
-
-router.get("/user-profile", (req, res, next) => {
-  res.render("user-profile");
-});
 
 router.get("/github", passport.authenticate("github"));
 

@@ -161,4 +161,7 @@ app.use("/", auth);
 const photo = require("./routes/photos");
 app.use("/", photo);
 
+const user = require("./routes/users");
+app.use("/", user);
+
 module.exports = app;
