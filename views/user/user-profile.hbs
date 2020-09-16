@@ -1,9 +1,18 @@
 <h1>Hi {{user.username}}, welcome to your profile </h1>
 <h2>Your photos</h2>
+<div class="photo-wrapper"></div>
+{{#if userPhotos}}
 {{#each userPhotos}}
-<img src={{imgPath}} alt="">
+<div class="photo-item">
+  <img src={{imgPath}} alt="">
+  <a href="/photo/delete/{{this._id}}">❌</a>
+</div>
 {{/each}}
 
+{{else}}
+<h3>No photos yet 🤷‍♀️🤷‍ ️</h3>
+{{/if}}
+</div>
 <a href="/photo/add">add a photo</a>
 
 

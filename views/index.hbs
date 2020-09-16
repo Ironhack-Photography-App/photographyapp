@@ -16,8 +16,24 @@
 </form>
 
 <body class='landing-page-body'>
+  <form action="/categories" method="POST">
+    <select class="custom-select" name="category">
+      <option value="" selected>Select Photo Category</option>
+      <option value="Nature">Nature</option>
+      <option value="Animals">Animals</option>
+      <option value="Wedding">Wedding</option>
+      <option value="Portrait">Portrait</option>
+      <option value="Architecture">Architecture</option>
+      <option value="Family">Family</option>
+      <option value="Food">Food</option>
+    </select>
 
+    <div class="btn-group">
+      <button class="btn btn-outline-secondary" type="submit">Search</button>
+    </div>
+  </form>
 </body>
+
 {{else}}
 <a href="/logout">Log out</a>
 {{/unless}}
