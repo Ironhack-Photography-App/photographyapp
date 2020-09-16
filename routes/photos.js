@@ -1,13 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Photo = require("../models/Photo");
-const {
-  loginCheck
-} = require("./middlewares");
-const {
-  uploader,
-  cloudinary
-} = require("../config/cloudinary");
+const { loginCheck } = require("./middlewares");
+const { uploader, cloudinary } = require("../config/cloudinary");
 const User = require("../models/User");
 
 router.get("/photo/add", (req, res, next) => {
@@ -19,7 +14,11 @@ router.get("/photo/:photoId", (req, res, next) => {
   Photo.findById(req.params.photoId)
     .then((photo) => {
       res.render("photo/photo", {
+<<<<<<< HEAD
+        photos,
+=======
         photo
+>>>>>>> dev
       });
     })
     .catch((err) => {
@@ -34,10 +33,7 @@ router.post(
   uploader.single("photo"),
   loginCheck(),
   (req, res, next) => {
-    const {
-      description,
-      comment
-    } = req.body;
+    const { description, comment } = req.body;
     // cloudinary information
     const imgName = req.file.originalname;
     const imgPath = req.file.url;
@@ -46,21 +42,21 @@ router.post(
     console.log(imgName, imgPath, imgPublicId);
 
     Photo.create({
-        owner: req.user._id,
-        description,
-        // comment,
-        imgName,
-        imgPath,
-        imgPublicId,
-      })
+      owner: req.user._id,
+      description,
+      // comment,
+      imgName,
+      imgPath,
+      imgPublicId,
+    })
       .then((photo) => {
         User.findByIdAndUpdate(req.user._id, {
           $push: {
-            gallery: photo._id
-          }
-        }).then(user => {
-          res.redirect("/photo");
-        })
+            gallery: photo._id,
+          },
+        }).then((user) => {
+          res.redirect("/user-profile");
+        });
       })
       .catch((err) => {
         next(err);
@@ -90,6 +86,14 @@ router.post(
 
 
 router.post("/photo/:id/comments", (req, res, next) => {
+<<<<<<< HEAD
+  const { user, comments } = req.body.photo;
+  Photo.findByIdAndUpdate(req.params.photoId, {
+    $push: {
+      photos: {
+        user: user,
+        comments: comments,
+=======
   const {
     user,
     comment
@@ -100,6 +104,7 @@ router.post("/photo/:id/comments", (req, res, next) => {
           user: user,
           comment: comment,
         },
+>>>>>>> dev
       },
     })
     .then((photo) => {
@@ -117,7 +122,7 @@ router.get("/photo/delete/:id", (req, res, next) => {
       if (photo.imgPath) {
         cloudinary.uploader.destroy(photo.imgPublicId);
       }
-      res.redirect("/");
+      res.redirect("/user-profile");
     })
     .catch((err) => {
       next(err);

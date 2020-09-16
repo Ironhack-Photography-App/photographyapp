@@ -163,5 +163,7 @@ app.use("/", photo);
 
 const user = require("./routes/users");
 app.use("/", user);
+const categories = require("./routes/categories");
+app.use("/", categories);
 
 module.exports = app;

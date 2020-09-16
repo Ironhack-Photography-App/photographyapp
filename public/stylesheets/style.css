@@ -1,9 +1,12 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 
 a {
-  color: #00b7ff; }
+  color: #00b7ff;
+  text-decoration: none;
+}
 
 nav ul {
   display: flex;
@@ -15,14 +18,28 @@ nav ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333; }
+  background-color: #333;
+}
 
 nav li {
   display: inline;
-  margin: 20px; }
+  margin: 20px;
+}
 
 .landing-page-body {
   background-image: url("../images/landingpage.jpeg");
-  background-size: cover; }
+  background-size: cover;
+}
+.dashboard-body {
+  background-image: url("../images/landingpage.jpeg");
+  background-size: cover;
+}
+
+img {
+  float: inline-start;
+  width: 15vw;
+  height: 30vh;
+  object-fit: cover;
+}
 
 /*# sourceMappingURL=style.css.map */
