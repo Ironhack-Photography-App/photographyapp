@@ -21,17 +21,32 @@ router.get("/dashboard", (req, res, next) => {
 });
 
 router.get("/user-profile", (req, res, next) => {
-  Photo.find({
-      owner: req.user._id
-    })
-    .then((userPhotos) => {
-      console.log(userPhotos);
+  User.findById(req.user._id).populate("gallery").populate("favorites")
+    .then((user) => {
+      console.log(user);
       res.render("user/user-profile", {
         user: req.user,
-        userPhotos: userPhotos
+        userPhotos: user.gallery,
+        favorites: user.favorites,
       });
     })
     .catch((err) => next(err));
 });
+
+router.get("/photographer/:id", (req, res, next) => {
+  //console.log("is this the user?>>", req.params.id);
+  User.findById(req.params.id)
+    .populate('gallery')
+    .then((photographer) => {
+      console.log(photographer);
+      res.render("user/photographer", {
+        user: req.params.id,
+        photographer: photographer,
+      });
+    })
+    .catch((err) => next(err));
+});
+
+
 
 module.exports = router;

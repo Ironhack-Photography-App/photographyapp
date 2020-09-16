@@ -3,9 +3,11 @@
 
 
 <button><a href="/user-profile">Your Profile</a></button>
+
 {{#each photographers}}
-<p>{{username}}</p>
+<a href="/photographer/{{_id}}">{{username}}</a>
 {{#each gallery}}
 <img src={{imgPath}} alt="">
+
 {{/each}}
 {{/each}}

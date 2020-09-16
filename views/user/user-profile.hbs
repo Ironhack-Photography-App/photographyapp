@@ -7,15 +7,9 @@
 <a href="/photo/add">add a photo</a>
 
 
-<p>Add a comment</p>
-<form action="/photos/{{photo._id}}/comments" method="POST">
-  <label for="user">User:</label>
-  <input type="text" name='user' id='user'>
 
-  <label for="comments">Comments:</label>
-  <textarea type="text" name="comments" id="comments"></textarea>
-
-  <button type='submit'> ADD </button>
-</form>
 
 <h2>Your favorites</h2>
+{{#each favorites}}
+<img src={{imgPath}} alt="">
+{{/each}}

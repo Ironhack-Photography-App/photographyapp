@@ -10,11 +10,16 @@ const {
 } = require("../config/cloudinary");
 const User = require("../models/User");
 
-router.get("/photo", (req, res, next) => {
-  Photo.find()
-    .then((photos) => {
+router.get("/photo/add", (req, res, next) => {
+  console.log("does this work?", req.user);
+  res.render("photo/photo-add");
+});
+
+router.get("/photo/:photoId", (req, res, next) => {
+  Photo.findById(req.params.photoId)
+    .then((photo) => {
       res.render("photo/photo", {
-        photos
+        photo
       });
     })
     .catch((err) => {
@@ -22,10 +27,7 @@ router.get("/photo", (req, res, next) => {
     });
 });
 
-router.get("/photo/add", (req, res, next) => {
-  console.log("does this work?", req.user);
-  res.render("photo/photo-add");
-});
+
 
 router.post(
   "/photo/add",
@@ -66,16 +68,40 @@ router.post(
   }
 );
 
+router.post(
+  "/favorite/:photoId",
+  (req, res, next) => {
+
+    User.findByIdAndUpdate(req.user._id, {
+        $push: {
+          favorites: req.params.photoId
+        }
+      }, {
+        new: true
+      }).then(user => {
+        console.log(user)
+        res.redirect("/user-profile");
+      })
+      .catch((err) => {
+        next(err);
+      });
+  }
+);
+
+
 router.post("/photo/:id/comments", (req, res, next) => {
-  const { user, comments } = req.body.photo;
-  Book.findByIdAndUpdate(req.params.photoId, {
-    $push: {
-      photos: {
-        user: user,
-        comments: comments,
+  const {
+    user,
+    comment
+  } = req.body.photo;
+  Photo.findByIdAndUpdate(req.params.photoId, {
+      $push: {
+        photos: {
+          user: user,
+          comment: comment,
+        },
       },
-    },
-  })
+    })
     .then((photo) => {
       res.redirect(`/photo/${photo._id}`);
     })
