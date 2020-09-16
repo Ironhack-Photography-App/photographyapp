@@ -11,10 +11,10 @@ router.post("/categories", (req, res, next) => {
   User.find({ category: category })
     .populate("gallery")
     .then((photographers) => {
-      console.log(
-        "this is the photographers'photos",
-        photographers[0].gallery.imgPath
-      );
+      // console.log(
+      //   "this is the photographers'photos",
+      //   photographers[0].gallery.imgPath
+      // );
 
       res.render("photo/categories", {
         photographers: photographers,
