@@ -21,14 +21,13 @@ router.get("/dashboard", (req, res, next) => {
 });
 
 router.get("/user-profile", (req, res, next) => {
-  Photo.find({
-      owner: req.user._id
-    })
-    .then((userPhotos) => {
-      console.log(userPhotos);
+  User.findById(req.user._id).populate("gallery").populate("favorites")
+    .then((user) => {
+      console.log(user);
       res.render("user/user-profile", {
         user: req.user,
-        userPhotos: userPhotos
+        userPhotos: user.gallery,
+        favorites: user.favorites,
       });
     })
     .catch((err) => next(err));
