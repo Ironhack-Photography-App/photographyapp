@@ -4,8 +4,11 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  /* color: #e5d0cc; */
+  /* color: #f4dbd8; */
+  color: #bea8a7;
   text-decoration: none;
+  font-size: larger;
 }
 
 nav ul {
@@ -27,12 +30,31 @@ nav li {
 }
 
 .landing-page-body {
-  background-image: url("../images/landingpage.jpeg");
+  background-image: url("../images/museum.jpeg");
   background-size: cover;
 }
 .dashboard-body {
+  background-image: url("../images/whiteroom.jpeg");
+  background-size: contain;
+}
+.profile-body {
+  background-image: url("../images/whitebkg.jpeg");
+  background-size: contain;
+}
+.users-profile {
+  background-image: url("../images/whiteroom.jpeg");
+  background-size: cover;
+}
+/* .login-body {
   background-image: url("../images/landingpage.jpeg");
   background-size: cover;
+} */
+.profile-img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 15vw;
+  height: 30vh;
 }
 
 img {
@@ -42,4 +64,7 @@ img {
   object-fit: cover;
 }
 
+.username {
+  font-size: 20px;
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,13 +1,12 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #F4DBD8;
 }
 
-a {
-  color: #00b7ff;
-}
 
-nav ul {
+
+/* nav ul {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -17,25 +16,19 @@ nav ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #7F7B82;
 }
 
 nav li {
   display: inline;
   margin: 20px;
-}
+} */
 
 #home-link {
   float: left;
 }
-<<<<<<< HEAD
-a {
-  text-decoration: none;
-}
-=======
 
->>>>>>> dev
-.button {
+/* .button {
   display: inline-block;
   padding: 0.46em 1.6em;
   border: 0.1em solid #000000;
@@ -55,9 +48,50 @@ a {
   text-shadow: 0 0 2em rgba(255, 255, 255, 1);
   color: #00b7ff;
   border-color: #ffffff;
+} */
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0.5em 3em; */
+  border: 0.16em solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+  transition: all 0.15s;
+}
+.button:hover {
+  color: #333;
+  border-color: #dddddd;
+}
+.button:active {
+  color: #bbbbbb;
+  border-color: #bbbbbb;
 }
 
-.landing-page-body {
-  background-image: url("../images/landingpage.jpeg");
-  background-size: cover;
+@media all and (max-width:30em){
+   .button{
+    display:block;
+    margin:0.4em auto;
+   }
+  }
+
+h1 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#welcome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

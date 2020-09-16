@@ -14,19 +14,13 @@ router.get("/photo/:photoId", (req, res, next) => {
   Photo.findById(req.params.photoId)
     .then((photo) => {
       res.render("photo/photo", {
-<<<<<<< HEAD
-        photos,
-=======
-        photo
->>>>>>> dev
+        photo,
       });
     })
     .catch((err) => {
       next(err);
     });
 });
-
-
 
 router.post(
   "/photo/add",
@@ -64,49 +58,37 @@ router.post(
   }
 );
 
-router.post(
-  "/favorite/:photoId",
-  (req, res, next) => {
-
-    User.findByIdAndUpdate(req.user._id, {
-        $push: {
-          favorites: req.params.photoId
-        }
-      }, {
-        new: true
-      }).then(user => {
-        console.log(user)
-        res.redirect("/user-profile");
-      })
-      .catch((err) => {
-        next(err);
-      });
-  }
-);
-
+router.post("/favorite/:photoId", (req, res, next) => {
+  User.findByIdAndUpdate(
+    req.user._id,
+    {
+      $push: {
+        favorites: req.params.photoId,
+      },
+    },
+    {
+      new: true,
+    }
+  )
+    .then((user) => {
+      console.log(user);
+      res.redirect("/user-profile");
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
 
 router.post("/photo/:id/comments", (req, res, next) => {
-<<<<<<< HEAD
-  const { user, comments } = req.body.photo;
+  const { user, comment } = req.body.photo;
   Photo.findByIdAndUpdate(req.params.photoId, {
     $push: {
       photos: {
         user: user,
-        comments: comments,
-=======
-  const {
-    user,
-    comment
-  } = req.body.photo;
-  Photo.findByIdAndUpdate(req.params.photoId, {
-      $push: {
-        photos: {
-          user: user,
-          comment: comment,
-        },
->>>>>>> dev
+        comment: comment,
       },
-    })
+    },
+  })
     .then((photo) => {
       res.redirect(`/photo/${photo._id}`);
     })
