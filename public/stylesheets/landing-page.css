@@ -28,9 +28,13 @@ nav li {
 #home-link {
   float: left;
 }
+<<<<<<< HEAD
 a {
   text-decoration: none;
 }
+=======
+
+>>>>>>> dev
 .button {
   display: inline-block;
   padding: 0.46em 1.6em;

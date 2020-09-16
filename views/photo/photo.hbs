@@ -1,27 +1,28 @@
-<h1>Photo</h1>
+<h1>Photo Details</h1>
 <div class="photo-wrapper">
-  {{#if photos}}
-  {{#each photos}}
+  {{#if photo}}
   <div class="photo-item">
-    <h4>{{this.owner}}</h4>
-    <p>{{this.description}}</p>
-    <p>{{this.comment}}</p>
+
 
     <img src="{{this.imgPath}}" alt="photo-url">
     <a href="/photo/delete/{{this._id}}">❌</a>
+    <p>{{photo.description}}</p>
+    <p>{{photo.comment}}</p>
+    <form action="/favorite/{{photo._id}}" method="POST">
+
+      <button>Add to Favorites</button>
+    </form>
+    <img src="{{photo.imgPath}}" alt="photo-url">
   </div>
-  {{/each}}
   {{else}}
   <h3>No photos yet 🤷‍♀️🤷‍ ️</h3>
   {{/if}}
 </div>
 
-<a href="/photo/add">Add a photo</a>
+
 
 <p>Add a comment</p>
-<form action="/user-profile" method="POST">
-  <label for="user">User:</label>
-  <input type="text" name='user' id='user'>
+<form action=`/comment/{{photo._id}}` method="POST">
 
   <label for="comments">Comments:</label>
   <textarea type="text" name="comments" id="comments"></textarea>

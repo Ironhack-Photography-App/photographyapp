@@ -7,18 +7,14 @@ const userSchema = new Schema({
   avatar: String,
   location: [],
   category: [String],
-  gallery: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Photo",
-    },
-  ],
-  favorites: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Photo",
-    },
-  ],
+  gallery: [{
+    type: Schema.Types.ObjectId,
+    ref: "Photo",
+  }, ],
+  favorites: [{
+    type: Schema.Types.ObjectId,
+    ref: "Photo",
+  }],
   role: {
     type: String,
     enum: ["user", "admin"],
