@@ -1,18 +1,18 @@
 <h1 style="display: flex; justify-content: center; align-items: center;">
-  Welcome
-  {{#if user.name}}
+  Welcome to THE _ SPACE
+  {{!-- {{#if user.name}}
   {{user.name}}
   {{else}}
   {{user.username}}
   {{/if}}
   {{#if user.avatar}}
   <img src="{{user.avatar}}" style="height: 100px; border-radius: 50%; margin-left: 20px">
-  {{/if}}
+  {{/if}} --}}
 </h1>
 
 {{#unless user}}
 <form action="/signup">
-  <button type="submit">Create an account</button>
+  <button class="button" type="submit">Create an account</button>
 </form>
 
 <body class='landing-page-body'>
@@ -29,7 +29,7 @@
     </select>
 
     <div class="btn-group">
-      <button class="btn btn-outline-secondary" type="submit">Search</button>
+      <button class="button" type="submit">Search</button>
     </div>
   </form>
 </body>

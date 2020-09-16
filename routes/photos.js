@@ -60,7 +60,7 @@ router.post(
 
 router.post("/photo/:id/comments", (req, res, next) => {
   const { user, comments } = req.body.photo;
-  Book.findByIdAndUpdate(req.params.photoId, {
+  Photo.findByIdAndUpdate(req.params.photoId, {
     $push: {
       photos: {
         user: user,
