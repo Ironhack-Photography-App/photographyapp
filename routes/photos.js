@@ -27,6 +27,20 @@ router.get("/photo/add", (req, res, next) => {
   res.render("photo/photo-add");
 });
 
+router.get("/photo-detail", (req, res, next) => {
+  Photo.find({
+      owner: req.params.id
+    })
+    .then((photos) => {
+      res.render("photo/photo-detail", {
+        photos
+      });
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
 router.post(
   "/photo/add",
   uploader.single("photo"),
@@ -67,15 +81,18 @@ router.post(
 );
 
 router.post("/photo/:id/comments", (req, res, next) => {
-  const { user, comments } = req.body.photo;
-  Book.findByIdAndUpdate(req.params.photoId, {
-    $push: {
-      photos: {
-        user: user,
-        comments: comments,
+  const {
+    user,
+    comments
+  } = req.body.photo;
+  Photo.findByIdAndUpdate(req.params.photoId, {
+      $push: {
+        photos: {
+          user: user,
+          comments: comments,
+        },
       },
-    },
-  })
+    })
     .then((photo) => {
       res.redirect(`/photo/${photo._id}`);
     })

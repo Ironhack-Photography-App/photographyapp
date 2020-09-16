@@ -1,0 +1,9 @@
+<h1> This is {{photographer.username}}'s page </h1>
+<h2>Photo gallery</h2>
+
+{{#each photographer}}
+{{#each gallery}}
+<img src={{imgPath}} alt="">
+
+{{/each}}
+{{/each}}

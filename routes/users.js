@@ -34,4 +34,20 @@ router.get("/user-profile", (req, res, next) => {
     .catch((err) => next(err));
 });
 
+router.get("/photographer/:id", (req, res, next) => {
+  //console.log("is this the user?>>", req.params.id);
+  User.findById(req.params.id)
+    .populate('gallery')
+    .then((photographer) => {
+      console.log(photographer);
+      res.render("user/photographer", {
+        user: req.params.id,
+        photographer: photographer,
+      });
+    })
+    .catch((err) => next(err));
+});
+
+
+
 module.exports = router;
