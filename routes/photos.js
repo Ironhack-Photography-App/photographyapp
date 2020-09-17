@@ -15,6 +15,7 @@ router.get("/photo/:photoId", (req, res, next) => {
     .then((photo) => {
       res.render("photo/photo", {
         photo,
+        user: req.user,
       });
     })
     .catch((err) => {
@@ -59,6 +60,10 @@ router.post(
 );
 
 router.post("/favorite/:photoId", (req, res, next) => {
+  console.log(req.user, " HERE");
+  if (req.user.favorites.includes(req.params.photoId)) {
+    return;
+  }
   User.findByIdAndUpdate(
     req.user._id,
     {

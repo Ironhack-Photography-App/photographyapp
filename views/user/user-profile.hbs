@@ -6,7 +6,8 @@
     {{#if userPhotos}}
     {{#each userPhotos}}
     <div class="photo-item">
-      <img class='profile-img' src={{imgPath}} alt="">
+      {{!-- <img class='profile-img' src={{imgPath}} alt=""> --}}
+      <a href="/photo/{{_id}}"><img src={{imgPath}} alt=""></a>
       <a href="/photo/delete/{{this._id}}">❌</a>
     </div>
     {{/each}}
@@ -26,7 +27,9 @@
 
   <h2>Your favorites</h2>
   {{#each favorites}}
-  <img class='profile-img' src={{imgPath}} alt="">
+  {{!-- <img class='profile-img' src={{imgPath}} alt=""> --}}
+  <a href="/photo/{{_id}}"><img src={{imgPath}} alt=""></a>
+  <a href="/photo/delete/{{this._id}}">❌</a>
   {{/each}}
 
 </body>

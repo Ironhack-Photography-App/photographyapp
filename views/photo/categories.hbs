@@ -1,15 +1,23 @@
 <h1>Search Results for Category</h1>
+
+
+
+
 {{#if photographers}}
 {{#each photographers}}
-<p>{{this.username}}</p>
+{{!-- <p>{{this.username}}</p> --}}
+<a class="username" href="/photographer/{{_id}}">
+  {{username}}<br>
+</a>
 
 {{#each this.gallery}}
-<img src={{imgPath}} alt="">
+{{!-- <img src={{imgPath}} alt=""> --}}
+<a href="/photo/{{_id}}"><img src={{imgPath}} alt=""></a>
 {{/each}}
 
 {{/each}}
 
 {{else}}
-<h3>No photographers yet 🤷‍♀️🤷‍ ️</h3>
+<h3>No photographers in this category yet 🤷‍♀️🤷‍ ️</h3>
 
 {{/if}}
