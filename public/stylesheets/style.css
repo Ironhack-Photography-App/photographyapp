@@ -9,6 +9,7 @@ a {
   text-decoration: none;
   font-size: 20px;
 }
+
 /* .navbar {
   display: flex;
   flex-direction: row;
@@ -69,8 +70,8 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-.header {
-}
+.header {}
+
 nav ul {
   display: flex;
   flex-direction: row;
@@ -95,22 +96,27 @@ img {
   height: 30vh;
   object-fit: cover;
 }
+
 .landing-page-body {
   background-image: url("../images/museum.jpeg");
   background-size: cover;
 }
+
 .dashboard-body {
   background-image: url("../images/whiteroom.jpeg");
   background-size: contain;
 }
+
 .profile-body {
   background-image: url("../images/whitebkg.jpeg");
   background-size: contain;
 }
+
 .users-profile {
   background-image: url("../images/whiteroom.jpeg");
   background-size: cover;
 }
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -161,6 +167,7 @@ nav li {
   border-color: #ffffff;
 } */
 
+
 .button {
   display: flex;
   justify-content: center;
@@ -177,21 +184,25 @@ nav li {
   text-align: center;
   transition: all 0.15s;
 }
+
 .button:hover {
   color: #333;
   border-color: #dddddd;
 }
+
 .button:active {
   color: #bbbbbb;
   border-color: #bbbbbb;
 }
 
 @media all and (max-width: 30em) {
-   .button {
+  .button {
     display: block;
     margin: 0.4em auto;
   }
 }
+
+
 
 h1 {
   display: flex;
@@ -201,8 +212,13 @@ h1 {
   align-content: center;
 }
 
-#welcome {
+
+.welcome {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: 100px;
+  font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
