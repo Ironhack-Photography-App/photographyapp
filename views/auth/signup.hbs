@@ -1,53 +1,53 @@
-
-
+<body class="signup-body"></body>
 <div class="container">
-   <section id="content">
-     <h1>Sign Up</h1>
-  <form action="/signup" method="POST">
+  <section id="content">
+    <h1>Sign Up</h1>
+    <form action="/signup" method="POST">
 
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username">
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username">
 
-    <label for="password">Password:</label>
-    <input type="password" name="password">
+      <label for="password">Password:</label>
+      <input type="password" name="password">
 
-    <label for="location">Location:</label>
-    <input type="text" name="location" id="location"><br>
+      <label for="location">Location:</label>
+      <input type="text" name="location" id="location"><br>
 
-    {{!-- <label for="category">Category:</label>
+      {{!-- <label for="category">Category:</label>
     <input type="text" name="category" id="category"> --}}
 
 
 
-    <label for="category">Category:</label>
-    <input type="checkbox" id="wedding" name="category" value="Wedding">
-    <label for="wedding"> Wedding</label>
-    <input type="checkbox" id="nature" name="category" value="Nature">
-    <label for="nature"> Nature</label>
-    <input type="checkbox" id="food" name="category" value="Food">
-    <label for="food">Food</label><br>
-    <input type="checkbox" id="portrait" name="category" value="Portrait">
-    <label for="portrait"> Portrait</label>
-    <input type="checkbox" id="art" name="category" value="Art">
-    <label for="art"> Art</label>
-    <input type="checkbox" id="animals" name="category" value="Animals">
-    <label for="animals"> Animals</label><br>
-    <input type="checkbox" id="fashion" name="category" value="Fashion">
-    <label for="fashion"> Fashion</label>
-    <input type="checkbox" id="architecture" name="category" value="Architecture">
-    <label for="architecture"> Architecture</label>
-    <input type="checkbox" id="Landscape" name="category" value="Landscape">
-    <label for=" Landscape"> Landscape</label><br><br>
+      <label for="category">Category:</label>
+      <p><input type="checkbox" id="wedding" name="category" value="Wedding">
+        <label for="wedding"> Wedding</label></p>
+      <p> <input type="checkbox" id="nature" name="category" value="Nature">
+        <label for="nature"> Nature</label></p>
+      <p><input type="checkbox" id="food" name="category" value="Food">
+        <label for="food">Food</label><br></p>
+      <p><input type="checkbox" id="portrait" name="category" value="Portrait">
+        <label for="portrait"> Portrait</label></p>
+      <p> <input type="checkbox" id="art" name="category" value="Art">
+        <label for="art"> Art</label></p>
+      <p><input type="checkbox" id="animals" name="category" value="Animals">
+        <label for="animals"> Animals</label><br></p>
+      <p><input type="checkbox" id="fashion" name="category" value="Fashion">
+        <label for="fashion"> Fashion</label></p>
+      <p><input type="checkbox" id="architecture" name="category" value="Architecture">
+        <label for="architecture"> Architecture</label></p>
+      <p><input type="checkbox" id="Landscape" name="category" value="Landscape">
+        <label for=" Landscape"> Landscape</label><br><br></p>
 
 
-    {{!-- Checkbox: <input type="checkbox" id="myCheck" onclick="myFunction()"> --}}
-    <p id="text" style="display:none">Checkbox is CHECKED!</p>
+      {{!-- Checkbox: <input type="checkbox" id="myCheck" onclick="myFunction()"> --}}
+      <p id="text" style="display:none">Checkbox is CHECKED!</p>
 
-    <button class="button" type="submit">Sign Up</button>
-  </form><br>
-  Already have an account ?<a href="/login">Login here</a>
-  {{#if message}}
-  <p style="color: red">{{message}}</p>
-  {{/if}}
+      <button class="button" type="submit">Sign Up</button>
+    </form><br>
+    Already have an account ?<a href="/login">Login here</a>
+    {{#if message}}
+    <p style="color: red">{{message}}</p>
+    {{/if}}
   </section>
 </div>
+</body>
