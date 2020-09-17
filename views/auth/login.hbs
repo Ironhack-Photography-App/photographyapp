@@ -1,19 +1,24 @@
-<h1>Login</h1>
 
-<form action="/login" method="POST">
+<div class="container">
+  <section id="content">
+    <h1>Login</h1>
 
-  <label for="username">Username:</label>
-  <input type="text" name="username" id="username">
+  <form action="/login" method="POST">
 
-  <label for="password">Password:</label>
-  <input type="password" name="password">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username">
 
-  <button class="button" type="submit">Log In 😉</button>
-</form>
+    <label for="password">Password:</label>
+    <input type="password" name="password">
 
-<a href="/github">Log in with GitHub</a><br>
-Don't have an account yet? <a href="/signup">Sign up here</a>
+    <button class="button" type="submit">Log In 😉</button>
+  </form>
 
-{{#if message}}
-<p style="color: red">{{message}}</p>
-{{/if}}
+  <a href="/github">Log in with GitHub</a><br>
+  Don't have an account yet? <a href="/signup">Sign up here</a>
+
+  {{#if message}}
+  <p style="color: red">{{message}}</p>
+  {{/if}}
+  </section>
+</div>
