@@ -70,6 +70,14 @@ img {
   background-image: url("../images/whiteroom.jpeg");
   background-size: cover;
 }
+.categories-body {
+  background-image: url("../images/whiteroom.jpeg");
+  background-size: cover;
+}
+.details-body {
+  background-image: url("../images/whiteroom.jpeg");
+  background-size: cover;
+}
 
 /*# sourceMappingURL=style.css.map */
 
@@ -96,6 +104,11 @@ nav ul {
 nav li {
   display: inline;
   margin: 20px;
+}
+.navbar-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
@@ -223,6 +236,24 @@ h1 {
 }
 
 #welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* p  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.photo-item {
   display: flex;
   justify-content: center;
   align-items: center;

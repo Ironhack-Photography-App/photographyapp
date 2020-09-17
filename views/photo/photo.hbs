@@ -1,36 +1,41 @@
-<h1>Photo Details</h1>
-<div class="photo-wrapper">
-  {{#if photo}}
-  <div class="photo-item">
+<body class="details-body">
+  <h1>Photo Details</h1>
+  <div class="photo-wrapper">
+    {{#if photo}}
+
 
     <p>{{photo.description}}</p>
-    {{!-- <p>{{{photo.comment}}}</p> --}}
 
+    <div class="photo-item">
+      <img class="photo-details-img" src="{{photo.imgPath}}" alt="photo-url">
+      {{!-- <a href="/photo/delete/{{this._id}}">❌</a> --}}
+    </div>
 
-    <img class="photo-details-img" src="{{photo.imgPath}}" alt="photo-url">
-    {{!-- <a href="/photo/delete/{{this._id}}">❌</a> --}}
     <form action="/favorite/{{photo._id}}" method="POST">
 
       <button class="button">Add to Favorites</button>
     </form>
+
+    {{else}}
+    <h3>No photos yet 🤷‍♀️🤷‍ ️</h3>
+    {{/if}}
   </div>
-  {{else}}
-  <h3>No photos yet 🤷‍♀️🤷‍ ️</h3>
-  {{/if}}
-</div>
 
-<p>Comments:</p>
-{{#each photo.comment}}
-{{!-- <p>{{owner}}</p> --}}
-<p>{{username.username}}: {{comment}}</p>
-{{/each}}
+  <p>Comments:</p>
+  {{#each photo.comment}}
+  {{!-- <p>{{owner}}</p> --}}
+  <p>{{username.username}}: {{comment}}</p>
+  {{/each}}
 
 
-<p>Add a comment</p>
-<form action="/comment/{{photo._id}}" method="POST">
 
-  <label for="comments">Comments:</label>
-  <textarea type="text" name="comments" id="comments"></textarea>
+  <form action="/comment/{{photo._id}}" method="POST">
 
-  <button class="button" type='submit'> Add a comment </button>
-</form>
+    <label for="comments">Comments:</label>
+    <textarea type="text" name="comments" id="comments"></textarea><br>
+
+    <p><button class="button" type='submit'> Add a comment </button></p>
+
+  </form>
+
+</body>
