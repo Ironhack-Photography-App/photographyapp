@@ -1,10 +1,15 @@
 <h1> This is {{photographer.username}}'s page </h1>
 <h2>Photo gallery</h2>
 
-{{#each photographer}}
-{{#each gallery}}
-<a href="/photo/{{_id}}"><img src={{imgPath}} alt=""></a>
+<body class="users-profile">
+
+  {{#each photographer}}
+  {{#each gallery}}
+  <a href="/photo/{{_id}}"><img src={{imgPath}} alt=""></a>
 
 
-{{/each}}
-{{/each}}
+
+
+  {{/each}}
+  {{/each}}
+</body>

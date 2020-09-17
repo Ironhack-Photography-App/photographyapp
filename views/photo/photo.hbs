@@ -2,6 +2,10 @@
 <div class="photo-wrapper">
   {{#if photo}}
   <div class="photo-item">
+
+
+    <img src="{{this.imgPath}}" alt="photo-url">
+    <a href="/photo/delete/{{this._id}}">❌</a>
     <p>{{photo.description}}</p>
     <p>{{photo.comment}}</p>
     <form action="/favorite/{{photo._id}}" method="POST">
@@ -23,5 +27,5 @@
   <label for="comments">Comments:</label>
   <textarea type="text" name="comments" id="comments"></textarea>
 
-  <button type='submit'> ADD </button>
+  <button class="button" type='submit'> ADD </button>
 </form>

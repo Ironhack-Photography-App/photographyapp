@@ -1,15 +1,32 @@
-<h1>Hi {{user.username}}, welcome to your profile </h1>
+<h1>{{user.username}}'s profile </h1>
 <h2>Your photos</h2>
-{{#each userPhotos}}
-<img src={{imgPath}} alt="">
-{{/each}}
 
-<a href="/photo/add">add a photo</a>
+<body class="profile-body">
+  <div class="photo-wrapper">
+    {{#if userPhotos}}
+    {{#each userPhotos}}
+    <div class="photo-item">
+      <img class='profile-img' src={{imgPath}} alt="">
+      <a href="/photo/delete/{{this._id}}">❌</a>
+    </div>
+    {{/each}}
+
+    {{else}}
+    <h3>No photos yet 🤷‍♀️🤷‍ ️</h3>
+    {{/if}}
+  </div>
+  <a href="/photo/add">ADD A PHOTO</a>
 
 
 
 
-<h2>Your favorites</h2>
-{{#each favorites}}
-<img src={{imgPath}} alt="">
-{{/each}}
+  {{!-- <button class="button" type='submit'> ADD </button>
+</form> --}}
+
+
+  <h2>Your favorites</h2>
+  {{#each favorites}}
+  <img class='profile-img' src={{imgPath}} alt="">
+  {{/each}}
+
+</body>
