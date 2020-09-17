@@ -18,6 +18,8 @@ router.post("/categories", (req, res, next) => {
 
       res.render("photo/categories", {
         photographers: photographers,
+        // user: req.params.id,
+        user: req.user,
       });
     })
     .catch((err) => {

@@ -14,7 +14,7 @@
 <body>
   <header>
     <div class="header">
-      <nav>
+      <nav class="navbar">
         {{#unless user}}
         <ul>
           <li><a href="/login">Log in</a></li>
@@ -22,6 +22,22 @@
           <li id="home-link"><a href="/">Home</a></li>
 
         </ul>
+        <form action="/categories" method="POST">
+          <select class="custom-select" name="category">
+            <option value="" selected>Select Photo Category</option>
+            <option value="Nature">Nature</option>
+            <option value="Animals">Animals</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Portrait">Portrait</option>
+            <option value="Architecture">Architecture</option>
+            <option value="Family">Family</option>
+            <option value="Food">Food</option>
+          </select>
+
+          <div class="btn-group">
+            <button class="button" type="submit">Search</button>
+          </div>
+        </form>
         {{/unless}}
 
         {{#if user}}
@@ -30,6 +46,22 @@
           <li><a href="/logout">Log out</a></li>
           <li><a href="/dashboard">Home</a></li>
         </ul>
+        <form action="/categories" method="POST">
+          <select class="custom-select" name="category">
+            <option value="" selected>Select Photo Category</option>
+            <option value="Nature">Nature</option>
+            <option value="Animals">Animals</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Portrait">Portrait</option>
+            <option value="Architecture">Architecture</option>
+            <option value="Family">Family</option>
+            <option value="Food">Food</option>
+          </select>
+
+          <div class="btn-group">
+            <button class="button" type="submit">Search</button>
+          </div>
+        </form>
         {{/if}}
 
       </nav>
