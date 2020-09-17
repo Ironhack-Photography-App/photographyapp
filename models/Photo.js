@@ -12,7 +12,7 @@ const photoSchema = new Schema({
   comment: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Comments",
+      ref: "Comment",
     },
   ],
 });

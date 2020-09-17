@@ -7,9 +7,10 @@
 <button class="button"><a href="/user-profile">Your Profile</a></button>
 {{#each photographers}}
 <p><a class="username" href="/photographer/{{_id}}">
-    {{username}}
+    {{username}}<br> Location: {{location}}<br>
   </a></p>
 {{#each gallery}}
-<img src={{imgPath}} alt="">
+
+<a href="/photo/{{_id}}"><img src={{imgPath}} alt=""></a>
 {{/each}}
 {{/each}}

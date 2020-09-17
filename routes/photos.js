@@ -4,6 +4,7 @@ const Photo = require("../models/Photo");
 const { loginCheck } = require("./middlewares");
 const { uploader, cloudinary } = require("../config/cloudinary");
 const User = require("../models/User");
+const Comment = require("../models/Comments");
 
 router.get("/photo/add", (req, res, next) => {
   console.log("does this work?", req.user);
@@ -12,6 +13,7 @@ router.get("/photo/add", (req, res, next) => {
 
 router.get("/photo/:photoId", (req, res, next) => {
   Photo.findById(req.params.photoId)
+    .populate({ path: "comment", populate: { path: "username" } })
     .then((photo) => {
       res.render("photo/photo", {
         photo,
@@ -84,18 +86,40 @@ router.post("/favorite/:photoId", (req, res, next) => {
     });
 });
 
-router.post("/photo/:id/comments", (req, res, next) => {
-  const { user, comment } = req.body.photo;
-  Photo.findByIdAndUpdate(req.params.photoId, {
-    $push: {
-      photos: {
-        user: user,
-        comment: comment,
-      },
-    },
+// router.post("/photo/:id/comments", (req, res, next) => {
+//   const { user, comment } = req.body.photo;
+//   Photo.findByIdAndUpdate(req.params.photoId, {
+//     $push: {
+//       photos: {
+//         user: user,
+//         comment: comment,
+//       },
+//     },
+//   })
+//     .then((photo) => {
+//       res.redirect("/photo/${photo._id}");
+//     })
+//     .catch((error) => {
+//       next(error);
+//     });
+// });
+
+router.post("/comment/:photoId", (req, res, next) => {
+  const comments = req.body.comments;
+  const photoId = req.params.photoId;
+  Comment.create({
+    username: req.user._id,
+    comment: comments,
+    photo_Id: photoId,
   })
-    .then((photo) => {
-      res.redirect(`/photo/${photo._id}`);
+    .then((newComment) => {
+      Photo.findByIdAndUpdate(photoId, {
+        $push: {
+          comment: newComment._id,
+        },
+      }).then((photo) => {
+        res.redirect(`/photo/${photoId}`);
+      });
     })
     .catch((error) => {
       next(error);

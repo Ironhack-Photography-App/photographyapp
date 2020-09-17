@@ -18,7 +18,7 @@ a {
   align-items: baseline;
 } */
 
-nav ul {
+.navbar ul {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -31,11 +31,20 @@ nav ul {
   background-color: #333;
 }
 
-nav li {
+.navbar li {
   display: inline;
   margin: 20px;
 }
 
+select {
+  display: flex;
+  justify-content: flex-end;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
 img {
   float: inline-start;
   width: 15vw;
@@ -62,6 +71,14 @@ img {
   background-image: url("../images/whiteroom.jpeg");
   background-size: cover;
 }
+.categories-body {
+  background-image: url("../images/whiteroom.jpeg");
+  background-size: cover;
+}
+.details-body {
+  background-image: url("../images/whiteroom.jpeg");
+  background-size: cover;
+}
 
 /*# sourceMappingURL=style.css.map */
 
@@ -70,7 +87,8 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-.header {}
+.header {
+}
 
 nav ul {
   display: flex;
@@ -89,14 +107,30 @@ nav li {
   display: inline;
   margin: 20px;
 }
+.navbar-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 img {
   float: inline-start;
-  width: 15vw;
-  height: 30vh;
+  width: 25vw;
+  height: 50vh;
   object-fit: cover;
 }
 
+.photo-details-img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 75vw;
+  height: 70vh;
+  object-fit: contain;
+}
 .landing-page-body {
   background-image: url("../images/museum.jpeg");
   background-size: cover;
@@ -167,7 +201,6 @@ nav li {
   border-color: #ffffff;
 } */
 
-
 .button {
   display: flex;
   justify-content: center;
@@ -202,8 +235,6 @@ nav li {
   }
 }
 
-
-
 h1 {
   display: flex;
   flex-wrap: nowrap;
@@ -212,7 +243,6 @@ h1 {
   align-content: center;
 }
 
-
 .welcome {
   display: flex;
   justify-content: center;
@@ -220,5 +250,10 @@ h1 {
   position: relative;
   top: 100px;
   font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 
+.photo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
