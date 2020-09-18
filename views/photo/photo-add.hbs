@@ -1,19 +1,23 @@
-<h2>Upload a photo</h2>
+<body class="dashboard-body">
 
-<form action="/photo/add" method='POST' enctype="multipart/form-data">
 
-  {{!-- <label for="owner">Owner</label>
+  <h2>Upload a photo</h2>
+
+  <form action="/photo/add" method='POST' enctype="multipart/form-data">
+
+    {{!-- <label for="owner">Owner</label>
   <input type="text" name="owner" id="owner"> --}}
 
-  <label for="description">Description</label>
-  <input type="text" name="description" id="description">
+    <label for="description">Description</label>
+    <input type="text" name="description" id="description">
 
-  {{!-- <label for="comments">Comments:</label>
+    {{!-- <label for="comments">Comments:</label>
   <textarea type="text" name="comments" id="comments"></textarea> --}}
 
-  <label for="photo">Photo</label>
-  <input type="file" name="photo" id='photo'>
+    <label for="photo">Photo</label>
+    <input type="file" name="photo" id='photo'>
 
-  <button class="button" type='submit'>ADD A PHOTO</button>
+    <button class="button" type='submit'>ADD A PHOTO</button>
 
-</form>
+  </form>
+</body>

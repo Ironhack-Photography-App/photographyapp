@@ -1,7 +1,11 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Lato", sans-serif;
   background-color: #e5d0cc;
+}
+
+* {
+  font-family: "Lato", sans-serif;
 }
 
 a {
@@ -51,10 +55,10 @@ img {
   height: 30vh;
   object-fit: cover;
 }
-
 .landing-page-body {
   background-image: url("../images/museum.jpeg");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .dashboard-body {
@@ -82,12 +86,17 @@ img {
 
 /*# sourceMappingURL=style.css.map */
 
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.header {
 }
 
-.header {
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+}
+
+.head-container {
+  max-width: 329px;
 }
 
 nav ul {
@@ -134,6 +143,8 @@ img {
 .landing-page-body {
   background-image: url("../images/museum.jpeg");
   background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }
 
 .dashboard-body {
@@ -223,6 +234,13 @@ nav li {
   border-color: #dddddd;
 }
 
+.big-button {
+  margin: 50px;
+  width: 280px;
+  height: 80px;
+  font-size: 18px;
+}
+
 .button:active {
   color: #bbbbbb;
   border-color: #bbbbbb;
@@ -236,20 +254,32 @@ nav li {
 }
 
 h1 {
-  display: flex;
+  /* display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  align-content: center;
+  align-content: center; */
+  text-align: center;
+  padding-bottom: 10px;
+  margin: 0;
 }
 
 .welcome {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-  top: 100px;
+  height: 200px;
+  /* position: relative;
+  top: 100px; */
   font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.welcome .firstH1 {
+  font-size: 100px;
+  margin-top: 350px;
+  letter-spacing: 12px;
+  font-family: "Crimson Text", serif;
 }
 
 .photo-item {
