@@ -9,6 +9,7 @@ a {
   text-decoration: none;
   font-size: 20px;
 }
+
 /* .navbar {
   display: flex;
   flex-direction: row;
@@ -17,7 +18,7 @@ a {
   align-items: baseline;
 } */
 
-nav ul {
+.navbar ul {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -30,11 +31,20 @@ nav ul {
   background-color: #333;
 }
 
-nav li {
+.navbar li {
   display: inline;
   margin: 20px;
 }
 
+select {
+  display: flex;
+  justify-content: flex-end;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
 img {
   float: inline-start;
   width: 15vw;
@@ -58,6 +68,14 @@ img {
 }
 
 .users-profile {
+  background-image: url("../images/whiteroom.jpeg");
+  background-size: cover;
+}
+.categories-body {
+  background-image: url("../images/whiteroom.jpeg");
+  background-size: cover;
+}
+.details-body {
   background-image: url("../images/whiteroom.jpeg");
   background-size: cover;
 }
@@ -71,6 +89,7 @@ body {
 
 .header {
 }
+
 nav ul {
   display: flex;
   flex-direction: row;
@@ -88,29 +107,50 @@ nav li {
   display: inline;
   margin: 20px;
 }
+.navbar-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 img {
   float: inline-start;
-  width: 15vw;
-  height: 30vh;
+  width: 25vw;
+  height: 50vh;
   object-fit: cover;
+}
+
+.photo-details-img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 75vw;
+  height: 70vh;
+  object-fit: contain;
 }
 .landing-page-body {
   background-image: url("../images/museum.jpeg");
   background-size: cover;
 }
+
 .dashboard-body {
   background-image: url("../images/whiteroom.jpeg");
   background-size: contain;
 }
+
 .profile-body {
   background-image: url("../images/whitebkg.jpeg");
   background-size: contain;
 }
+
 .users-profile {
   background-image: url("../images/whiteroom.jpeg");
   background-size: cover;
 }
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -177,17 +217,19 @@ nav li {
   text-align: center;
   transition: all 0.15s;
 }
+
 .button:hover {
   color: #333;
   border-color: #dddddd;
 }
+
 .button:active {
   color: #bbbbbb;
   border-color: #bbbbbb;
 }
 
 @media all and (max-width: 30em) {
-   .button {
+  .button {
     display: block;
     margin: 0.4em auto;
   }
@@ -201,7 +243,16 @@ h1 {
   align-content: center;
 }
 
-#welcome {
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 100px;
+  font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.photo-item {
   display: flex;
   justify-content: center;
   align-items: center;

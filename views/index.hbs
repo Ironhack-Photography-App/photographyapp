@@ -1,22 +1,28 @@
 <div class="welcome">
+  <p>
   <h1>
     Welcome to
-    {{!-- {{#if user.name}}
-  {{user.name}}
-  {{else}}
-  {{user.username}}
-  {{/if}}
-  {{#if user.avatar}}
-  <img src="{{user.avatar}}" style="height: 100px; border-radius: 50%; margin-left: 20px">
-  {{/if}} --}}
+    {{#if user.name}}
+    {{user.name}}
+    {{else}}
+    {{user.username}}
+    {{/if}}
+    {{#if user.avatar}}
+    <img src="{{user.avatar}}" style="height: 100px; border-radius: 50%; margin-left: 20px">
+    {{/if}}
   </h1>
+  </p>
+
+  <p>
   <h1> THE _ SPACE </h1>
+  </p>
+
 </div>
 
 {{#unless user}}
-<form action="/signup">
-  <button class="button" type="submit">Create an account</button>
-</form>
+
+
+
 
 <body class='landing-page-body'>
   {{!-- <form action="/categories" method="POST">
